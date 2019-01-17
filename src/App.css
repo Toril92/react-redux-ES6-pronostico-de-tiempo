@@ -24,8 +24,9 @@
 
 .detail {
   background: #999;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
+  overflow: auto;
 }
 
 @keyframes App-logo-spin {
