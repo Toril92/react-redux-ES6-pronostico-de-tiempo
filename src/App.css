@@ -29,6 +29,12 @@
   overflow: auto;
 }
 
+@media (max-width: 64em){
+  .detail {
+    height: 60vh;
+  }
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

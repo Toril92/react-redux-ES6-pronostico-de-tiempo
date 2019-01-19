@@ -7,7 +7,7 @@ import './styles.css';
 const LocationList = ( {cities, onSelectedLocation} ) => {
     const handleWeatherLocationClick = city => {
         onSelectedLocation(city);
-    }
+    };
     const citiesToComponent = cities => (
         cities.map( city => 
             (

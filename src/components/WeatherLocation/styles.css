@@ -1,4 +1,4 @@
-.weatherLocationCont{
+.weatherLocationCont {
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100% - 45px);
@@ -6,15 +6,18 @@
     padding: 25px;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    box-shadow: 10px 10px 42px -12px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 42px -12px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
 }
-.locationCont{
+
+.locationCont {
     width: 100%;
     height: 35px;
     text-align: left;
     color: #888;
     line-height: 35px;
 }
-.locationCont h1{
+
+.locationCont h1 {
     margin: 0;
 }

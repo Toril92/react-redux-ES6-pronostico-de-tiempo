@@ -8,7 +8,6 @@ const ForecastItem = ({weekDay, hour, dataWeatherData}) => (
         <h2>{weekDay} Hora:{hour}</h2>
         <WeatherData data={dataWeatherData}/>
     </div>
-
 );
 
 
