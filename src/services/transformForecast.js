@@ -13,7 +13,7 @@ const transformForecast = data => {
             hour: moment.unix(item.dt).utc().hour(),
             data: transformWeather(item),
         }
-    ))
+    ));
     return transformacion;
 };
 

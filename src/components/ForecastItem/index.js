@@ -16,7 +16,7 @@ ForecastItem.propTypes = {
     hour: PropTypes.number.isRequired,
     dataWeatherData: PropTypes.shape({
         temperature: PropTypes.number.isRequired,
-        weatherstate: PropTypes.string.isRequired,
+        weatherState: PropTypes.string.isRequired,
         humidity: PropTypes.number.isRequired,
         wind: PropTypes.string.isRequired,
     }),

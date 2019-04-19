@@ -1,51 +1,36 @@
-import React, {Component} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import ForecastItem from "./ForecastItem/index";
 import "./styles.css";
 
 // api.openweathermap.org/data/2.5/forecast?q={city name},{country code}
 
-class ForecastExtended extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {forecastData: null}
-    }
+const renderForecastItemDays = (forecastData) => {
+    return forecastData.map(forecast => (
+        <ForecastItem
+            key={`${forecast.weekDay}${forecast.hour}`}
+            weekDay={forecast.weekDay}
+            hour={forecast.hour}
+            dataWeatherData={forecast.data}
+        />
+    ));
+};
 
-    componentWillReceiveProps(nextProps, nextContext) {
-        if(nextProps.city !== this.props.city){
-            this.setState({forecastData: null});
-        }
-    }
+const renderProgress = () => {
+    return <h3>"Cargando pronóstico extendido"</h3>
+};
 
-    renderForecastItemDays(forecastData) {
-        return forecastData.map(forecast => (
-            <ForecastItem
-                key={`${forecast.weekDay}${forecast.hour}`}
-                weekDay={forecast.weekDay}
-                hour={forecast.hour}
-                dataWeatherData={forecast.data}
-            />
-        ));
-    }
-
-    renderProgress() {
-        return <h3>"Cargando pronóstico extendido"</h3>
-    }
-
-    render() {
-        const {city} = this.props;
-        const {forecastData} = this.state;
-        return (
-            <div>
-                <h2 className="forecastTitle">Pronóstico Extendido para {city}</h2>
-                {forecastData ? this.renderForecastItemDays(forecastData) : this.renderProgress()}
-            </div>);
-    }
-}
+const ForecastExtended = ({city, forecastData}) => (
+    <div>
+        <h2 className="forecastTitle">Pronóstico Extendido para {city}</h2>
+        {forecastData ? renderForecastItemDays(forecastData) : renderProgress()}
+    </div>
+);
 
 ForecastExtended.propTypes = {
     city: PropTypes.string.isRequired,
+    forecastData: PropTypes.string.isRequired,
 };
 
 export default ForecastExtended;

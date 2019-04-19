@@ -1,8 +1,11 @@
 import {createStore, applyMiddleware, compose} from "redux";
 import thunk from 'redux-thunk';
-import {city} from '../reducers/city';
+import reducers from '../reducers';
+// import {city} from "../reducers/city";
 
-const initState = {};
+const initState = {
+    city: "Granada,es"
+};
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -10,7 +13,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 * para utilizar middlewares como el thunk y a la vez utilizar la extension de redux de chrome hay que crear la
 * store de la siguiente manera*/
 
-export const store = new createStore(city, initState,
+export const store = new createStore(reducers, initState,
     composeEnhancers(applyMiddleware(thunk)));
 
 
@@ -21,5 +24,5 @@ export const store = new createStore(city, initState,
 * initState: estado inicial de la aplicación
 * window..... => sirve para linkar de manera correcta la extensión de chrome de redux*/
 
-/*export const store = new createStore(city, initState,
+/*export const store = new createStore(reducers, initState,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());*/
